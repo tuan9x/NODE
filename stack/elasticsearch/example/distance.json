@@ -1,0 +1,38 @@
+{
+  "size": 10,
+  "query": {
+     "bool": {
+    	"must": [
+    		// {
+    		// 	"terms": {
+			//     	"pageId": [ 111090330 ]
+			//     }
+    		// }
+    	]
+    }
+  },
+  "aggs" : {
+        "categories" : {
+            "terms" : { 
+                "field" : "id",
+                "size" : 10
+            }
+        }
+    },
+
+  "stored_fields" : [ "_source" ],
+  "script_fields" : {
+    "distance" : {
+      "script" : {
+        "source": "doc['location'].arcDistance(params.lat,params.lon) * 0.001",
+        "lang": "painless",
+        "params": {
+             "lat": 12.12,
+             "lon": 2.12
+        }
+      }
+    }
+  }
+  
+  
+}

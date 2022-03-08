@@ -1,0 +1,17 @@
+- Err: nextval() in postgresql err, it is exit:
+    + Because run script import .sql (script will insert with ID but nextval not increament) => Err
+    + Or when person add row data on UI Tool and set ID handmade => Err
+
+    => FIX: RUN SCRIPT SQL 
+
+
+
+=================================
+SELECT setval('pages_id_seq', (SELECT MAX(id) FROM pages));
+SELECT setval('webs_id_seq', (SELECT MAX(id) FROM webs));
+SELECT setval('web_config_id_seq', (SELECT MAX(id) FROM web_config));
+
+
+--------------------------------------------------------------------------------------------- 
+SELECT MAX(id) FROM post_cate); -- Get Current Max Id // 763
+SELECT nextval('kind_web_id_seq'); -- Get Next Value ID Auto increament

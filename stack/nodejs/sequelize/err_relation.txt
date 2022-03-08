@@ -1,0 +1,11 @@
+Err relation sequelize: (UserModel)
+ +  @ForeignKey(() => GroupModel)
+    @AllowNull(false)
+    groupId: number;
+
+    /**** XXX ****/
+    @BelongsTo(() => GroupModel)
+    group: GroupModel;
+
+    => If del "groupId" on code or on model and exist relation "XXX" on code
+    ==> Err relation sequelize but not throw err true and it can err many scope other

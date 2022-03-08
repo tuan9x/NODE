@@ -1,0 +1,80 @@
+
+* Nested Order:
+order: [  
+  [ { model: chapterModel, as: 'Chapters' }, 'createdAt', 'ASC'], 
+
+  [ { model: chapterModel, as: 'Chapters' }, 
+    { model: partModel, as: 'Parts' }, 'createdAt', 'ASC'] 
+],
+
+
+
+
+* Full example 1:
+
+const configWeb = await PageModel.findOne({
+        where: {
+            webCode,
+            code: pageCode
+        },
+        attributes: {
+            exclude: ["id", "webId", "desc", "createdAt", "updatedAt", "deletedAt"]
+        },
+        order: [
+            [{model: ModuleModel, as: "modules"}, "level", "DESC"],
+            [
+                {model: ModuleModel, as: "modules"},
+                {model: StaticModel, as: "statics" }, "level", "DESC"
+            ]
+        ],
+        include: [
+            {
+                model: ModuleModel,
+                attributes: {
+                    exclude: ["id", "pageId", "desc", "createdAt", "updatedAt", "deletedAt"]
+                },
+                include: [
+                    {
+                        model: StaticModel,
+                        attributes: {
+                            exclude: ["id", "moduleId", "desc", "createdAt", "updatedAt", "deletedAt"]
+                        }
+                    }
+                ]
+            },
+        ]
+
+    });
+
+
+
+* Full example 1:
+PostCateModel.findAndCountAll({
+        where: {},
+        order: [
+            [{ model: PostModel, as: "post" } , "id", "DESC"]
+        ],
+        include: [
+            {
+                model: PostModel,
+                attributes: {
+                    exclude: ["deletedAt"]
+                }
+            },
+            {
+                model: CategoryModel,
+                attributes: ["name", "slug", "config"],
+                where: {
+                    isDeleted: false
+                }
+            }
+        ]
+    });
+
+==> 
+  + { model: PostModel, as: "post" } => Model to apply Order
+  + "id" : Field To Order
+  + "DESC" => Order Type
+
+
+

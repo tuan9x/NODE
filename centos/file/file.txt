@@ -1,0 +1,36 @@
+- cp -> to copy
+   + To make copy of file but with orther name on the same directory:
+   ===> cp [file_name] [another_name]
+
+   + To copy 1 or many file to orther directory:
+     ==> cp [file_1] [file_2] [file_n] [dir_path]
+
+   + To copy dir to orther dir:
+     Note: Name folder copy canot include "/" at the end.
+
+   + Copy folder: cp -r <foilder_coppy>  <new_folder>
+
+- cp -r /home/server/folder/test /home/server/
+   ==> copy foler
+   
+- mv -> Move or rename:
+    + Rename file, dir
+       ====>   mv [old_name] [new_name]
+
+     + If exit file have same name => "mv" cli Will re_write this file => BECAREFUL
+       You can add option -i to confirm before:
+      ===>  mv -i [old_name] [new_name]
+
+- file <filename>: type of file  
+- rm -rf abcd: delete file or folder  
+- show info fplder, file:
+    + ls : show 
+    + ls -a : show all ;
+    + ls -l : show with info
+    + ls -al: show all with info 
+
+
+
+
+
+

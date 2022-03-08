@@ -1,0 +1,5 @@
+- ssh-keygen -t rsa
+  + on local Moacos: cat .ssh/id_rsa.pub
+  + pn vps: => cat /root/.ssh/id_rsa.pub
+-----------------------------------------------------------
+

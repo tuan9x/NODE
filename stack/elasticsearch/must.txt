@@ -1,0 +1,16 @@
+{
+   "size": 100, // size of result == limit
+   "from": 1,   // =-= offset
+   "query": {
+        "bool": {
+            "must": [
+                {
+                    "exists": {
+                        "field": "sourceId"
+                    }
+                }
+            ]
+        }
+    }
+}
+>>>>> find doc with field "sourceId" not null

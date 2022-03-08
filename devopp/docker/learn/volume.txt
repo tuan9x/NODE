@@ -1,0 +1,11 @@
+===================================================
+- Run image-> container with mount volumn
+  + docker run -it -v /Desktop/dulieu:/home/dulieu 1ddbd8d00d0d
+  + docker run -it -v /Desktop/dulieu:/home/dulieu --name C1 1ddbd8d00d0d // Đặt tên 
+  + docker run -it --name C2 --volumes-from C1  1ddbd8d00d0d // Chia sẻ dữ liệu giống C1
+
+-  Ổ đĩa 
+   + docker volume ls // List
+   + docker volume create D1 // create 
+   + docker inspect D1 // check info disk 
+   + docker volume rm D2 // remove 

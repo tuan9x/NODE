@@ -1,0 +1,10 @@
+* HPA: Horizontal Pod Autocaler 
+
+- KN: replicaset: là 1 điều khiển Controller đảm bảo ổn định các nhân bản (số lượng và tình trạng các POD, replica) khi đang chạy 
+
+- kubectl get rs // get replicaSet
+- kubectl get rs -o wide // Get replicaSet with detail output
+- kubectl get rs -o yaml // Get replicaSet with yaml output
+
+- kubectl describe rs/rsapp. // inspect replicaset
+- kubectl delete rs rsapp // delete repolicaset 

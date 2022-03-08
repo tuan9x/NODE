@@ -1,0 +1,24 @@
+- BotFather
+- create new app
+- get token 
+- GET: https://api.telegram.org/bot<token>/getMe
+  or : https://api.telegram.org/bot<token>/getUpdates
+  ==> get chat_id of group have bot , EX: -9999999
+  ==> create if not exits gropup have bot 
+
+- POST: https://api.telegram.org/bot<token>/sendMessage
+        {
+          "chat_id": -9999999,
+          "text": "Hii"
+        }
+  OR:
+  GET : https://api.telegram.org/bot<token>/sendMessage?chat_id=436309844&text=Helloo
+
+
+
+
+
+
+
+
+

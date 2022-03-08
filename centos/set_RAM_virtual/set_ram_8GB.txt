@@ -1,0 +1,11 @@
+- sudo swapon --show
+- sudo fallocate -l 8G /tuantam
+- sudo dd if=/dev/zero of=/tuantam bs=1024 count=8388608
+- sudo chmod 600 /tuantam
+- sudo mkswap /tuantam
+- sudo swapon /tuantam
+- sudo nano /etc/fstab
+   => add : "/tuantam swap swap defaults 0 0"
+
+- sudo swapon --show
+- sudo free -h

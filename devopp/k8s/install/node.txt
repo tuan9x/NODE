@@ -1,0 +1,50 @@
+Adding Worker Nodes to Kubernetes Cluster
+- hostnamectl set-hostname 'node-1'
+	# cat <<EOF>> /etc/hosts
+	192.168.0.47 master-node
+	192.168.0.48 node-1 worker-node-1
+	192.168.0.49 node-2 worker-node-2
+	EOF
+
+- ping 192.168.0.47; // test connect to master
+- Next, disable SElinux and update your firewall rules.
+  + setenforce 0
+  + sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+  + firewall-cmd --permanent --add-port=6783/tcp
+  + firewall-cmd --permanent --add-port=10250/tcp
+  + firewall-cmd --permanent --add-port=10255/tcp
+  + firewall-cmd --permanent --add-port=30000-32767/tcp
+  + sudo systemctl restart firewalld
+  + echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+
+* Step 2: Setup Docker-CE and Kubernetes Repo
+- dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+- dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+
+- dnf install docker-ce -y
+- systemctl enable docker
+- systemctl start docker
+- cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+	[kubernetes]
+	name=Kubernetes
+	baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+	enabled=1
+	gpgcheck=1
+	repo_gpgcheck=1
+	gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+	EOF
+
+- dnf install kubeadm -y
+   *** Note: if err: ==> delete repo and reinstall 
+- systemctl enable kubelet
+- systemctl start kubelet
+- kubeadm join 192.168.0.47:6443 --token nu06lu.xrsux0ss0ixtnms5  --discovery-token-ca-cert-hash sha256:f996ea35r4353d342fdea2997a1cf8caeddafd6d4360d606dbc82314683478hjmf78
+
+- back to master node and check : "kubectl get nodes"
+
+
+
+
+
+

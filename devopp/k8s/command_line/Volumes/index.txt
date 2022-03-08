@@ -1,0 +1,4 @@
+- kubectl get pv 
+- kubectl describe pv/pv1
+
+- kubectl edit pv/pv1

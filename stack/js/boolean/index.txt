@@ -1,0 +1,3 @@
+Boolean(null) = false;
+Boolean(undefined) = false;
+

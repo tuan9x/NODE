@@ -1,0 +1,11 @@
+- sudo swapon --show
+- sudo fallocate -l 10G /tuan
+- sudo dd if=/dev/zero of=/tuan bs=1024 count=10485760
+- sudo chmod 600 /tuan
+- sudo mkswap /tuan
+- sudo swapon /tuan
+- sudo nano /etc/fstab
+   => add : "/tuan swap swap defaults 0 0"
+
+- sudo swapon --show
+- sudo free -h

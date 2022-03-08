@@ -1,0 +1,37 @@
+1. Viết sai message commit
+  - git commit --amend
+
+2. Đặt sai tên branch
+  - git branch -m <tên branch sau khi đổi>
+
+4. Khi lỡ tay commit nhầm sang một branch khác
+  - git branch other-branch
+  - git reset --hard HEAD~
+  - git checkout other-branch
+
+7. Chuyển xang nhánh khác khi đang làm việc giở
+  - git stash -u : Tạm thời lưu lại các phần công việc còn đang làm dở
+  - git checkout -b other-branch
+  - git add <các file cần thiết>
+  - git commit -m "commit message"
+  - git checkout origin-branch //  Trở về branch cũ
+  - git stash pop.  // Lấy lại các nội dung công việc đang làm dở trước đó
+
+8. Hồi phục commit quan trọng khi lỡ tay xóa nó đi
+  - git reflog
+  - git reset --hard <commit>
+
+10. Khôi phục về trạng thái trước khi merge
+  - git reset --hard ORIG_HEAD
+
+11. Khôi phục về trạng thái trước khi pull từ remote
+  - git pull origin master.  // Lấy từ code mới remote
+  - Phát sinh conflict, Suy nghĩ lại thì trong pull(fetch + merge) muốn bỏ phần merge:
+  ===> git reset --hard ORIG_HEAD
+
+13. Khi bạn muốn xoá 1 branch trên remote từ xa
+  - git push origin --delete remote-branch-name
+
+
+
+

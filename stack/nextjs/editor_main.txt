@@ -1,0 +1,4 @@
+
+
+* Err
+https://github.com/mkhstar/suneditor-react/issues/128

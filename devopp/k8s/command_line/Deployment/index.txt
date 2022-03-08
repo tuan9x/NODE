@@ -1,0 +1,9 @@
+ 
+ - kubectl describe deploy deployapp
+ - kubectl delete deploy "name_deploy"
+
+ - kubectl rollout history deploy/deployapp: kiểm tra các lần cập nhật của deploy  "deployapp"
+
+ - kubectl rollout history deploy/deployapp --revision=2  : thông tin cập nhật deploy "deployapp" lần 2 (--revision=2)
+ 
+ - kubectl rollout undo deploy/deployapp --to-revision=1 : rollback lại version lại lần cập nhật thứ 1

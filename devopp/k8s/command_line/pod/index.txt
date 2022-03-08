@@ -1,0 +1,13 @@
+
+- kubectl get po   : get all pod
+- kubectl get po -n kubernetes-dashboard  : get pod of namespace       
+    kubernetes-dashboard
+- kubectl delete po my_app  // delete pod
+- kubectl get po/myapp -o yaml  // get pod with output is yaml file
+
+- kubectl logs po/testapp -c ttt // if pod "testapp" have 2 container ==> -c ttt ==> log container ttt
+
+- scale thủ công sau khi chạy deployment:
+  ==> kubectl scale deploy/deploymentapp --replicas=10
+- scale tự động :
+  ==> kubectl autoscale deploy/deployapp --min=5 --max=8

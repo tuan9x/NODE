@@ -1,0 +1,5 @@
+* await sequelize.sync({ force: false });
+  => If exit DB with data
+  => Add new model => sequelize auto gen new table
+     + If "force: false": orther table exited data + add new table 
+     + If "force: true": sync DB ==> Clear all data and recreate

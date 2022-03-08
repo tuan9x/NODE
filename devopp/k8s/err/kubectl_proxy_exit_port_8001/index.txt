@@ -1,0 +1,2 @@
+- ps -ef | grep "kubectl proxy": show all id process use 
+- kill -9 4393 : delete 

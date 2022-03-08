@@ -1,0 +1,2 @@
+- If err with one repo, cd folder ==> delete repo and re_install:
+  cd /etc/yum.repos.d

@@ -1,0 +1,2 @@
+- edit file config when exec to container postgres: 
+     sudo nano /var/lib/postgresql/data/postgresql.conf

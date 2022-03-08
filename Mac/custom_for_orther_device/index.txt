@@ -1,0 +1,5 @@
+
+
+- KeyBoard: (Apply for orther Keyboard)
+ + Keyboard -> shortcuts -> Mission Control -> mission Control ==> alt + tabs ==> :))
+   => "alt + tabs" : show all windown application

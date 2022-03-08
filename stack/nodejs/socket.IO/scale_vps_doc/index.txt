@@ -1,0 +1,6 @@
+
+- sticky session:
+  + No sticky: User 1 ===> Load Balance  ==> app1 || app2 || app3......
+  + Sticky session: User 1 ===> Load Balance  ==> app1
+  
+  => 1 user will handle by 1 app instance in this session (phục vụ suốt trong phiên đó)

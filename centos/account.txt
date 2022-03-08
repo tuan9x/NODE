@@ -1,0 +1,1 @@
+- Change pass centos7 : passwd 

@@ -1,0 +1,8 @@
+- stable=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+- curl -LO https://storage.googleapis.com/kubernetes-release/release/${stable}/bin/linux/amd64/kubectl
+- chmod +x ./kubectl
+- sudo mv ./kubectl /usr/local/bin/kubectl
+
+
+* If err:
+ - export KUBERNETES_MASTER=http://MasterIP:8080

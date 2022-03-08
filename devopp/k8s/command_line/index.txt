@@ -1,0 +1,40 @@
+
+
+- kubectl version --short: show version
+- kubectl cluster-info : show info
+
+- kubectl config view : show config
+- kubectl config get-contexts : show all context (as : cluster )
+- kubectl config use-context abcdefgh :  swich to other context ()
+
+- kubeadm token create --print-join-command :Lấy mã kết nối vào Cluster
+
+- kubeadm join 172.16.10.100:6443 --token 5ajhhs.atikwelbpr0 ... 
+   => node worker kết nối vào Cluster
+
+- kubectl get secret -A: get all secret from all namespace
+- kubectl describe secret/default-token-wlnvb -n kubernetes-dashboard
+   => get token to login dashboarch
+
+============================================================
+
+- kubectl delete -f myapp.yaml  // delete pod from file yaml run it 
+- kubectl create secret generic kubernetes-dashboard -certs --from-file=certs
+    -n kubernetes-dashboard   // ( -n ==> namespace )
+
+- kubectl get deployments -n kubernetes-dashboard // get deployments of pod    
+     k8s_dashboard
+
+- kubectl exec -it container_name bash // accecc to contaiber 
+
+=======
+- kubectl api-resources: Lấy danh sách tài nguyên trong k8s + tên viết tắt 
+
+- kubectl [command] [TYPE] [NAME] [flags]
+  + [command]: hành động như : "apply, get , delete, desribe"
+  + [TYPE]: kiểu tài nguyên như : ns , no , po , svc ,....
+  + [NAME]: tên đối tượng lệnh tác động 
+  + [flags]: các thiết lập , tuỳ thuộc loại lệnh
+
+
+

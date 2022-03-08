@@ -1,0 +1,13 @@
+- Create intance gg
+- Use SSH Web Client of GG. ==> connect with web
+- + sudo su 
+  + passwd
+  + yum install nano 
+- nano /etc/ssh/sshd_config
+   PermitRootLogin -> yes
+   PasswordAuthentication -> yes
+
+- sudo service sshd restart
+
+
+==> login with ssh client

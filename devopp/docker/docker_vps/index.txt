@@ -1,0 +1,29 @@
+# Centos:
+- sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+- sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+- sudo yum install -y docker-ce
+  == > err01.txt
+- sudo yum uninstall podman
+- sudo yum remove -y podman-manpages
+
+- dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+- dnf install docker-ce --nobest -y
+
+- sudo yum-config-manager --enable docker-ce-edge
+- sudo yum-config-manager --enable docker-ce-test
+- sudo systemctl start docker
+
+* Note : if not enough RAM ==> err ==> set virture RAM.
+
+==========================================================
+- Run simplete : sudo docker run -d -v /home/postgres:/var/lib/postgresql/data -p 5432:5432 -it postgres
+
+==========================================================
+- Run with docker-compose: 
+
+
+===========
+==> sudo firewall-cmd --zone=public --add-port=5432/tcp --permanent
+    sudo firewall-cmd --reload

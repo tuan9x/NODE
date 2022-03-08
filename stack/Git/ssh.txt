@@ -1,0 +1,2 @@
+- Gen ssh Key : ssh-keygen -t rsa
+- folder save key : cd /root/.ssh/

@@ -1,0 +1,12 @@
+- Show port app use: netstat -anp --tcp --udp | grep LISTEN
+  ==>Delete app use port: kill -9 <process ID>
+
+- show all port , connect use and active,....
+   + netstat -tulpn   ==> output is number
+   + netstat -tulp    ==> output is string   
+
+- Disable service run when boot
+   + sudo systemctl disable docker
+   
+- ps aux | less: show process on system linux
+- service --status-all: show status all service

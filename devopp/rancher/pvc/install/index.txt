@@ -1,0 +1,29 @@
+* Install NFS Server:
+- apt install nfs-kernel-server
+- systemctl enable nfs-kernel-server
+- mkdir tuannv
+- sudo nano /etc/exports
+  => Add: /root/tuannv 68.183.185.171(rw,sync,no_root_squash)
+- Disable fireware (ufw)
+- systemctl restart nfs-kernel-server
+
+* Add Persistent Volumes (PV) on root cluster
+- On rancher:
+ + Go to cluster meteam 
+ + Go to Storage -> Persistent Volumes
+ + Add:
+    Volume Plugin: NFS Share
+    Capacity: 40Gb
+    Path: /root/tuannv 
+    Server: 68.183.185.171
+
+* Run app and mount
+- Create App
+  + Volumes: (If exist => Use an exist persistent volume(claim) , else => Add new  persistent volume(claim))
+  + If add:
+    -> Select a presistent volume 
+    -> Add
+
+  + Mount Point: /usr/src/app/public
+  + Sub Path in Volume: public
+  ==> create folder public and mount at: /root/tuannv/public

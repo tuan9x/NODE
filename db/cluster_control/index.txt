@@ -1,0 +1,11 @@
+* Cluster Control is required listen but can use free version CC:
+
+* COnfig SSH:
+ + UI ClusterControl Server -> ssh-keygen -t rsa
+ => Coppy id_rsa.pub and add to SSHKey Vultr "XXX"
+ + Create 2 node with SSH Key "XXX" on Vultr
+
+* Install:
+ + wget http://www.severalnines.com/downloads/cmon/install-cc
+ + chmod +x install-cc
+ + sudo ./install-cc

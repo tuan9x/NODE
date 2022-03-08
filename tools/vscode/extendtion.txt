@@ -1,0 +1,27 @@
+Atom One Dark Theme 
+Auto Import 
+Beautify
+Bracket Pair Colorizer
+CSS Formatter
+DotENV
+EJS language support
+EJS Snippets
+Git Lens 
+HTML Boilerplate
+HTML CSS Support
+HTML Snippets
+Indenticator
+Javascript and Typescript Nightly
+JS JSX Snippets
+One Dark Pro
+Open Browser Preview
+open in browser
+Preview
+Shortcut menu bar
+styled-jsx
+Stylelint
+TSLint
+TSLint(deprecated)
+Docker
+docs-yaml
+YAML

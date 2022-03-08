@@ -1,0 +1,3 @@
+* redis-cli monitor | grep -E ' "(g|s)et" '
+  => Log pod monitor: log which pod redis used by pod node
+  => Check pod load balance

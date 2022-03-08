@@ -1,0 +1,21 @@
+const usesPost = await UserModel.findOne({
+    where: {
+      [Op.and]: whereAnd,
+    },
+    include: [
+      {
+        model: PostModel,
+        attributes: {
+          exclude: ['active'],
+        },
+        required: false,
+        separate: true,
+      },
+      ......
+    ],
+  });
+
+==> If UserModel HasMany PostModel 
+==> Use separate: true to build multy query (AKA: Eager Loading)
+
+==> Important for production

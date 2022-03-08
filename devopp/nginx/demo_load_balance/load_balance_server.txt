@@ -1,0 +1,17 @@
++ http {
+       upstream backend {
+           server 225.34.23.43;
+           server 76.34.23.98;
+           server 167.34.203.23;
+       }
+    }
+
+  // Tiếp theo redirect url về upstream group xử lí. 
+  + server {
+	    // Api Router is load-balancer to app_api
+	    location / {
+	        proxy_pass http://backend;
+	    }
+	}  
+
+===> Load balance from external item node ;  

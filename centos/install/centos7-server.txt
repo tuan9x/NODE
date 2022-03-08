@@ -1,0 +1,69 @@
+
+update centos : sudo yum update
+Install git : sudo yum install git -y
+
+Install Node :
+  Install repo epel : sudo yum install epel-release -y
+                 sudo yum install nodejs
+                 node --version
+  Install nvm : curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+          Add code reload : source ~/.bashrc
+
+          nvm ls-remote
+          nvm install 14.15.3
+
+Install mongodb : 
+
+sudo nano /etc/yum.repos.d/mongodb-org.repo
+       [mongodb-org-3.6]
+        name=MongoDB Repository
+        baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+        gpgcheck=1
+        enabled=1
+        gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+
+
+
+      To see list repo : yum repolist
+      Install :   sudo yum install mongodb-org
+                  sudo systemctl start mongod
+                  sudo systemctl reload mongod
+                  sudo tail /var/log/mongodb/mongod.log
+                  sudo systemctl restart mongod
+                  systemctl is-enabled mongod; echo $?
+                  sudo systemctl enable mongod
+
+                  sudo systemctl stop mongod
+
+Install pm2 : 
+   sudo npm install pm2@latest -g
+   pm2 start bin/www
+   sudo pm2 startup systemd
+pm2 save
+
+
+Install nginx :
+  sudo yum install epel-release -y
+  sudo yum install nginx -y
+
+sudo systemctl start nginx
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+
+ 
+  sudo nano /etc/nginx/nginx.conf => chen sao location L:
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+
+sudo systemctl restart nginx
+sudo systemctl enable nginx  // start nginx when start system
+
+
+

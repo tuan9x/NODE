@@ -1,0 +1,11 @@
+* Folder: pages => _test => server.js
+
+app.get('/_test/server', (req, res) => {
+        return server.render(req, res, '/_test/server', req.query)
+})
+
+=> name router "_test/server" can mapping true with name folder: _test/server
+=> To:
+   + with router render server call when f5 => server render
+   + with router render server but on local when change router
+     -> client call to server => server call to API => res to client and client render

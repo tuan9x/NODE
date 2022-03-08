@@ -1,0 +1,27 @@
+
+- "Can not find RKE state file: open /var/lib/rancher/management-state/rke/rke"
+  => rename host vps no "_" chractor :))
+
+- "[etcd] Failed to bring up Etcd Plane: [etcd] Etcd"
+  ==> Old data cache or save on local node
+  + chmod +x clean.sh 
+  + ./clean.sh  (example file) 
+
+
+* Alway check + research logs ;));
+
+=========================================
+
+- “Cluster must have at least one etcd plane host: failed to connect to the following etcd host(s) [10.xxx.xxx.36]” in Rancher?
+
+==> Registry update again to fix 
+==> (because registry pass or host, uname false ==> canot pull ==> err )
+// Or restart all docker 
+
+
+
+
+====================
+vps >>>>> centos7 + NoSElinux is oke best : ))
+
+

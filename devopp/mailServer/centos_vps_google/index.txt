@@ -1,0 +1,38 @@
+https://simonjcarr.medium.com/create-an-smtp-server-with-nodejs-5688d8fd882e
+
+* CentOS Linux 7 (Core)
+ - hostname => mail ?? notimportant 
+
+ - VPS: Open port 25 
+
+ - hostnamectl set-hostname mail
+ - Edit /etc/hosts
+      127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+      ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+      mail.abc.com A 34.126.69.49
+      abc.com MX mail.abc.com
+      10.148.0.26 mail.asia-southeast1-b.c.original-frame-302305.internal mail  # Added by Google
+      169.254.169.254 metadata.google.internal  # Added by Google
+
+    => Added:
+      mail.abc.com A 34.126.69.49
+      abc.com MX mail.abc.com
+
+    => 34.126.69.49: Is Public IPV4 VPS 
+
+  - node run simple.js
+
+
+
+===================
+* Note: DNS: 2 Record A & MX is important  (record TXT not important and can delete :)) )
+
+
+===================
+* App Port 25 already: Error: listen EADDRINUSE: address already in use 127.0.0.1:25
+  => yum isntall lsof -y
+  => lsof -i:25
+  => kill $(lsof -t -i:25)
+
+* server.listen(25, "0.0.0.0") => 0.0.0.0 is required, cannot change

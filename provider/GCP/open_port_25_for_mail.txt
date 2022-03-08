@@ -1,0 +1,21 @@
+
+* Open Port 25 for Mail Server:
+  - Go to concole.clould.google.com
+  => VPC network => Firewall role => Create Firewall Rule 
+  => Then Enter: ...
+          + Logs => Off
+          + Network: Default 
+          + Priority: 0
+          + Derection of trafic : Ingress (Default)
+          +  Target: All intances in the network 
+          + Source filter: IP Range (default)
+          + Source IP Ranges: 0.0.0.0/0 => Then enter 
+          + Second source filter: None (default)
+
+          + Protocols and ports => Allow All 
+           => Then click Specified protocols and ports
+           => Clieck check "tcp": 20,25,3000-8080
+              Click udp : All
+
+          => create oke
+

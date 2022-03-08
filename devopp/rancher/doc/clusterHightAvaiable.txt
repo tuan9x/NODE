@@ -1,0 +1,7 @@
+
+- rancher - k8s - nodeOne(abc.com) , nodeTwo(z.abc.com)
+  + if delete nodeTwo => z.abc.com die 
+  + if delete rancher => Web runn oke 
+  + if delete k8s     => Web run oke 
+
+  + if delete node that have ip map on DNS doamin => Die web

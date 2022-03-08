@@ -1,0 +1,38 @@
+* Entity-Attribute-Value Pattern: (EAV): => giải quyết bài toán các thực thể có số lượng các thuộc tính thay đổi
+
+- Ví dụ Users:
+  + Tạo bảng users: gồm các trường bắt buộc phải có và không thay đổi nhưng (name, email, password...) bảng này trong mô hình EAV gọi là bảng Entity (thực thể)
+
+  + Tạo bảng user_fields: bảng này trong mô hình EAV gọi là bảng Attribute (thuộc tính) có các trường dữ liệu (id, field_name là ') bảng này dùng để lưu các tên thuộc tính của user ví dụ cần lưu thêm phone user hay thêm address của user thì chúng ta cần insert thuộc tính đó vào bảng này
+
+  + Cuối cùng là bảng user_values: bảng này có các cột user_id, user_field_id, value. Dùng để lưu các giá trị của user tương ứng với các thuộc tính ở bảng user_fields , ví dụ ở bảng user_fields có thuộc tính phone thì bảng user_values dùng để lưu giá trị phone của user là gì.
+
+Ex:
+
+Users:
+  - users: + id = 1
+  		   + email
+  		   + password
+
+
+  		   - userFields: + fieldId: 5
+  		   				 + userId: 1
+  		   				 + fieldName: "age"
+  		   				 + userFieldType: "int"
+
+
+  		   				 - userFiledvalue: + id: 100
+  		   				 				   + userId: 1
+  		   				 				   + _value: 100
+
+
+
+
+
+
+
+
+
+
+
+  

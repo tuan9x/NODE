@@ -1,0 +1,1 @@
+watch kubectl get all,pv,pvc -o wide

@@ -1,0 +1,7 @@
+
+
+* Canot get id of group when call api get 
+   (https://api.telegram.org/bot_token/getUpdates)
+
+   - Remove bot from group and add again :D
+   - Call api getUpdates => chatId

@@ -1,0 +1,80 @@
+
+* SQL run: 
+		CREATE OR REPLACE FUNCTION table_users_notify() RETURNS trigger AS $$
+		DECLARE
+		  id bigint;
+		BEGIN
+		  IF TG_OP = 'INSERT' OR TG_OP = 'UPDATE' THEN
+		    id = NEW.id;
+		  ELSE
+		    id = OLD.id;
+		  END IF;
+		  PERFORM pg_notify('channel_users_listen', json_build_object('table', TG_TABLE_NAME, 'id', id, 'type', TG_OP)::text);
+		  RETURN NEW;
+		END;
+		$$ LANGUAGE plpgsql;
+
+
+		DROP TRIGGER users_notify_update ON users;
+		CREATE TRIGGER users_notify_update AFTER UPDATE ON users FOR EACH ROW EXECUTE PROCEDURE table_users_notify();
+
+		DROP TRIGGER users_notify_insert ON users;
+		CREATE TRIGGER users_notify_insert AFTER INSERT ON users FOR EACH ROW EXECUTE PROCEDURE table_users_notify();
+
+		DROP TRIGGER users_notify_delete ON users;
+		CREATE TRIGGER users_notify_delete AFTER DELETE ON users FOR EACH ROW EXECUTE PROCEDURE table_users_notify();
+
+
+		-- table_users_notify: đặt tên hàm NOTYFY 
+		-- channel_users_listen: tên channel lắng nghe thay đổi
+
+		-- users_notify_update, users_notify_insert, users_notify_delete: thêm 3 trigger with table "users"
+
+
+======================================================================
+* CODE:
+		import createSubscriber from "pg-listen";
+		const subscriber = createSubscriber({
+		    host: "127.0.0.1",
+		    database: "meone",
+		    user: "postgres",
+		    password: "123456",
+		    port: 5432
+		});
+
+		subscriber.notifications.on("channel_users_listen", async (payload) => {
+		  // Payload as passed to subscriber.notify() (see below)
+		  // await Slow();
+		  console.log("Received notification in 'channel_users_listen':", payload);
+		});
+
+		subscriber.events.on("error", (error) => {
+		  console.error("Fatal database connection error:", error);
+		  process.exit(1);
+		});
+
+		process.on("exit", () => {
+		  subscriber.close();
+		});
+
+		export async function connect () {
+		  console.log(">> starttt listen");
+		  await subscriber.connect();
+		  await subscriber.listenTo("channel_users_listen");
+		}
+
+		connect();
+
+
+
+
+======================================================================
+* NOTE:
+- When run multy query on transaction:
+  ==> Only when transaction done oke then PostgresQL push NOTYFY to channel
+  ==> only tranaction ok -> then push job update to queue :)
+
+
+
+
+

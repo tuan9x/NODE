@@ -1,0 +1,33 @@
+- sudo yum update -y
+
+// Disable Selinux
+- sestatus : check status Selinux
+- sudo setenforce 0 :  disable Selinux,
+- sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+- reboot
+
+- dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+- dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.0-2.0.rc.0.1.el7.x86_64.rpm -y // ko can
+
+- dnf install docker-ce -y --nobest. // ==> v19.03.12
+- systemctl enable docker
+- systemctl start docker
+
+
+sudo docker run -d -v /root/data:/var/lib/rancher --name rancher_server --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:stable
+
+or
+
+sudo docker run -d -v /root/data:/var/lib/rancher --name rancher_server --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:v2.4.5
+
+
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+
+
+
+
+
+
+

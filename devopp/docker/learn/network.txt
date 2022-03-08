@@ -1,0 +1,7 @@
+
+- Network
+ + docker network list // List
+ + docker network inspect e198e73d0288 // detail 
+
+ + docker run -it --name N1 -p 8888:80 busybox
+ + docker network create --driver bridge my_network

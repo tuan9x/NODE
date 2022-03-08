@@ -1,0 +1,22 @@
+
+
+- sudo yum install redis -y
+- sudo systemctl start redis.service
+- sudo systemctl enable redis
+- sudo vi /etc/redis.conf : ==> bind 0.0.0.0
+  ==> Edit for everey connect (default only local)
+
+-Firewall:
+  + sudo firewall-cmd --permanent --new-zone=redis
+  + sudo firewall-cmd --permanent --zone=redis --add-port=6379/tcp
+  + sudo firewall-cmd --reload
+
+- Open port 6379 to access from orther vps:
+   + sudo firewall-cmd --zone=public --add-port=6379/tcp --permanent
+   + sudo firewall-cmd --reload  
+
+=================
+Enable Auth
+- sudo nano /etc/redis.conf
+  ==> requirepass <password_here>
+  ==> systemctl restart redis

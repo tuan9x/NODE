@@ -1,0 +1,22 @@
+
+
+* Multy domain, subdomain setting:
+  - Specify a hostname to use:===> "*.io"
+    ===> all web .io
+
+
+* Change registry
+  - Global: https://rancher.abc.com/g/settings/advanced
+    ==> update "system default registry"
+  - Cluster: ==> edit cluater
+    ==> Private Registry --> Enabled
+    ==> + url: registry.hub.docker.com
+        + user: acc_hub
+        + pass: pass_passs
+
+========== ******** ========= > NOTE IN PRODUCTION::
+* Rancher:
+ + --etcd --controlplane --worker => On these first day start, can run 1 cluster with k8sServer + Worker on 1 VPS
+   => Domain config to this IP VPS Oke
+
+

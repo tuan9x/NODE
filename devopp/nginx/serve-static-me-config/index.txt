@@ -1,0 +1,19 @@
+- /root/app_static/public/txt
+>>>>
+    location /src/ {
+	   alias /root/app_static/public/txt/;
+	   autoindex on;
+	   sendfile           on;
+       sendfile_max_chunk 2m;
+    }
+
+==========================================
+
+* Chmod folder to static avoid 403
+	ls -al /root
+	chmod o+x /root
+	chmod o+x /root/app_static/public/txt
+
+
+* /sites-enabled : config main 
+  /sites-available : config sub doamin

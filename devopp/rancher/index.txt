@@ -1,0 +1,23 @@
+
+* grpc ==> serviceName.nameSpace:port 
+* Rest ==> http://serviceName.nameSpace:port
+
+* Zero_Downtime deoloyment:
+  => On rancher setting "Scaling/Upgrade Policy"
+      + Minimum Ready Time: 20s, 30s ,.... ==> after 20s, 30s,.. container created, it is considered available
+  => zero_downtime
+
+
+
+
+* INSTALL:
+  - centos 7 + noSeLinux + disable firewalld => Very oke :))
+  - ubuntu 20.04 + Can set noSeLinix + disable firewall :))
+
+  - If only install rancher + k8s server => Some pod on System_Namespace is not ready ==> Add nodeWorker 
+    => After add worker, that pod will running on nodeWorker
+
+
+*************
+ - Install rancher vs ubuntu20 (Enable ufw) => run oke
+   => Because cluster use orther connection 

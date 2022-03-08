@@ -1,0 +1,3 @@
+
+* Domain:
+ - namecheap => route to clouldflare => SSL 

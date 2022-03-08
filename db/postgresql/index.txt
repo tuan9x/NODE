@@ -1,0 +1,53 @@
+
+- Install postgresql on centos 8:
+  + sudo yum install postgresql-server postgresql-contrib
+  + sudo postgresql-setup initdb
+  + sudo nano /var/lib/pgsql/data/pg_hba.conf  ==> exit and no do something =))
+  + sudo systemctl start postgresql
+  + sudo systemctl enable postgresql
+
+  + sudo -i -u postgres
+  + psql
+  + createuser --interactive
+  + man createuser
+
+  + createdb demo
+  + sudo -i -u demo
+
+  + psql -d demo : connect to database "demo";
+
+
+=================================================================
+- sudo nano /var/lib/pgsql/data/postgresql.conf 
+   => add "listen_addresses = '*'
+
+- sudo nano /var/lib/pgsql/data/pg_hba.conf
+   => host    all             all             0.0.0.0/0            md5
+      host    all             all             ::0/0            md5
+=======> chua test connect tu laptop dc :))
+
+##############################################################################
+- link install: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-centos-7
+
+- Docker-compose : https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7
+
+
+- In docker container to connect postgres: psql -U postgres -W postgres  
+   (-U : username, -W : password)
+
+- https://devops.ionos.com/tutorials/install-postgresql-on-centos-7/
+
+
+- Link uninstall : https://kb.objectrocket.com/postgresql/how-to-completely-uninstall-postgresql-757
+
+
+
+- chnage pass :
+   + sudo -u postgres psql
+   + ALTER USER postgres PASSWORD '123456';
+      =====> No restart postgres service
+
+
+
+
+

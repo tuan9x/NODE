@@ -1,0 +1,8 @@
+=========================
+- curl -L -o myfile.xls "https://abc.xyz"
+   + -L : switch to make curl follow redirects
+   + -o : out put
+   + if only "curl http://..." ==> get content and show,
+     add "-o abc.txt" to download
+
+- wget: wget https://raw.io/master/index.html // ==> save index.html

@@ -1,0 +1,7 @@
+ 
+
+-Label
+   + kubectl label node master_vps nameabc=defgh
+   + kubectl get node -l "nameabc=csdcdscsd" // tìm kiếm node có nameabc = some_thing :)
+
+   + kubectl label node master_vps nameabc-  // xoá label

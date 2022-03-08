@@ -1,0 +1,22 @@
+- Change color theme :
+  => https://crunchify.com/how-to-change-mac-os-x-terminal-color/
+
+- Terminal: open .file:///Users/lapvip/Pictures/Screenshots/ 
+    =====>>  opne file explore from terminal
+
+================
+* Set hostname_title terminal abd color setting:
+  - cd /Users/tuan
+  - edit or create file .bash_profile
+    => Add:
+    export PS1="\[\033[36m\]\h\[\033[33;1m\]\w\[\033[m\]\$ "
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+    alias ls='ls -GFh'
+
+
+=========================
+* Short cli:
+  - nano ~/.bash_profile
+  - ==> alias ga='git add -A'
+  - source ~/.bash_profile

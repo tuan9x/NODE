@@ -1,0 +1,6 @@
+
+
++ Render ant react with nextjs
+ => Use: onConfirm={() => { deletePost(item) }}
+    Not Use: onConfirm={deletePost(item)}
+    ==> To Avoid Render Err From Server

@@ -1,0 +1,64 @@
+- Namecheap : ==> DNS to vultr
+- Install nginx
+- Install Certbot in CentOS 8:
+   + sudo curl -O https://dl.eff.org/certbot-auto
+   + sudo mv certbot-auto /usr/local/bin/certbot-auto
+   + chmod 0755 /usr/local/bin/certbot-auto
+
+   Configure Nginx Server Block
+    + sudo nano /etc/nginx/conf.d/abc.com
+    => add:
+    "
+    server {
+	   server_name www.abc.com;
+	   root /opt/nginx/www.abc.com;
+
+	   location / {
+	       
+	   }
+
+	   access_log /var/log/nginx/abc.com.access.log;
+	   error_log /var/log/nginx/abc.com.error.log;
+	}
+    "
+
+    + sudo /usr/local/bin/certbot-auto --nginx --domains "abc.com" 
+
+=====================================
+Get ssl for sub_domain:
+   - sudo /usr/local/bin/certbot-auto --nginx --domains "api.abc.com" 
+   ==> cd /conf.d  ==> add file sub_domain.conf 
+
+(Note: Lệnh trên sẽ đăng kí ssl cho sub và tạo các file key. Khi thêm file sub_domain.conf trong conf.d thì file đó cần thêm đoạn sau :
+    "
+       listen 443 ssl; # managed by Certbot
+       ssl_certificate /etc/letsencrypt/live/admin.abc.com/fullchain.pem;
+       ssl_certificate_key /etc/letsencrypt/live/admin.abc.com/privkey.pem;
+       include /etc/letsencrypt/options-ssl-nginx.conf;
+       ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    "
+
+=====================================
+Tự động chuyển sang ssl
+  server {
+      if ($host = api.abc.com) {
+          return 301 https://$host$request_uri;
+      } # managed by Certbot
+
+
+          listen       80;
+          server_name  api.abc.com;
+      return 404; # managed by Certbot
+  }
+
+
+======================================
+https://www.tecmint.com/secure-nginx-with-lets-encrypt-on-centos-8/
+
+=========
+Remove SSL
+   sudo /usr/local/bin/certbot-auto delete --cert-name api.abc.com
+
+
+
+

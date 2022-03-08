@@ -1,0 +1,24 @@
+
+* Chrome Proxy Extention:
+ - Extention: FoxyProxy Standard
+   => Follow image (in this folder)
+
+
+==============
+- bash <(curl -s "https://raw.githubusercontent.com/thuongtin/ipv4-ipv6-proxy/master/scripts/8.sh")
+-> File structure: IP4:PORT:LOGIN:PASS
+
+--=---------
+
+
+
+Install oke: (with centos 8 _ on vultr)
+  - touch run.sh // => copy code from ./vultr.sh
+  - chmod +x run.sh
+  - ./run.sh
+
+  ====> Install only success with some localtion ;)) (Singapo, Japan is err)
+
+=========
+Some Docs:
+  - https://www.vultr.com/docs/configure-centos-with-multiple-ip-addresses#Example_for_CentOS_8

@@ -1,0 +1,10 @@
+* Note: If load_balance then can used localhost, not used 127.0.0.1 :))
+
+- Default: load_banlance will Equally divided all request
+  + http {
+         upstream backend {
+             server 225.34.23.43;
+             server 76.34.23.98;
+             server 167.34.203.23;
+         }
+  }

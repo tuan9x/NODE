@@ -1,0 +1,3 @@
+- set virture RAM :
+   => https://www.vembu.com/blog/increase-swap-memory-centos-7/
+   ==> https://linuxize.com/post/how-to-add-swap-space-on-centos-7/   (recomand)

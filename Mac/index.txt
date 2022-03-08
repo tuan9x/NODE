@@ -1,0 +1,22 @@
+
+- Key fast mac:
+  + Command + Q : exit application fast.
+  + Command + Tab: change tab.
+  + COmmand shif 4 : screen
+
+  + command + R : Refres brower
+  + command + L : HightLight URL in address bar
+
+
+- Chrome: 
+   + Command + Option + U: View source code
+   + Command + w : close 1 tab chrome curent
+   + Command + shift + B : Toggle bookmark
+
+- Path
+  + Command + shift + G : Go to path
+
+- FL studio crack: https://www.alex71.com/cara-disable-system-integrity-protection-mac-os/
+
+- https://postgresapp.com/ => Postgresql App On MacOS
+

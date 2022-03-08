@@ -1,0 +1,32 @@
+import cryptoRandomString from "crypto-random-string";
+const ramdomOtp: string = cryptoRandomString({
+    length: 6,
+    type: "distinguishable"
+});
+// => CU101C , K22MEM, 2KYMX0, 558PK8, M4415M,...
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+** NOTE:
+     await Promise.all([
+          await LogsOtpModel.create({ phone: "097777" , log_type: "request" }),
+          await LogsOtpModel.create({ phone: "097777", log_type: "request_response" })
+     ]);
+     ==> Slow , chạy đồng bộ từng cái một chứ ko chạy đồng thời (do await)
+     
+
+     await Promise.all([
+          LogsOtpModel.create({ phone: "097777" , log_type: "request" }),
+          LogsOtpModel.create({ phone: "097777", log_type: "request_response" })
+     ])
+     ===> Oke , FAST , chạy đồng thời 
+
+==> Promise.all muốn chạy đồng thời cần truyền vào Promise và ko có từ khoá "await"
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+async function getData () {
+    return new Promise(resolve => setTimeout(resolve, 2000))
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

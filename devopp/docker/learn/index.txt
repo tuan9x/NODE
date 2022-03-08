@@ -1,0 +1,29 @@
+Command line :
+- Run docker: sudo docker run -v <forder_in_computer>:<forder_in_container> 
+     -p <port_in_computer>:<port_in_container> -it <image_name> /bin/bash
+
+- sudo docker build -t <image_name> .
+
+- App in docker,db connect database local =>      
+- docker network inspect id/name : check info network (have ip =)))
+
+- Remove all images:
+  + docker rmi -f $(docker images -a -q)
+
+- Push images to hub:
+   + docker tag j98 acc_hub/j98:1.1
+   + docker push acc_hub/j98:1.1
+
+======
+docker stop $(docker ps -a -q)
+docker rm -f $(docker ps -a -q)
+
+
+docker stop $(docker ps -a -q)
+docker rm -f $(docker ps -a -q)
+docker rmi -f $(docker images -a -q)
+
+
+
+
+

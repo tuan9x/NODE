@@ -1,0 +1,126 @@
+{
+   "size": 100,
+   "query": {
+        "bool": {
+            "must": [
+                // {
+                //     "terms": {
+                //         "id": [ 740 ]
+                //     }
+                // }
+                
+                // {
+                //     "exists": {
+                //         "field": "sourceId"
+                //     }
+                // }
+                // {
+                
+
+                // {
+                //     "terms": {
+                //         "barcode.keyword": [ "4891133329016" ]
+                //     }
+                // }
+                
+                // {
+                //     "exists": {
+                //         "field": "sourceId"
+                //     }
+                // }
+                
+                // {
+                //     "terms": {
+                //         "owner.pageId": [1136]
+                //     }
+                // }
+
+                // {
+                //     "terms": {
+                //         "sourceId": [ 111132449 ]
+                //     }
+                // }
+
+                // ,
+
+                // ,{
+                //     "exists": {
+                //         "field": "name"
+                //     }
+                // },
+                // {
+                //     "exists": {
+                //         "field": "barcode"
+                //     }
+                // }
+            ]
+        }
+    }
+    
+    // ,"aggs" : {
+    //     "categories" : {
+    //         "terms" : { 
+    //             "field" : "cateStr.keyword" 
+    //             ,"size" : 500
+    //         }
+    //     }
+    // }
+
+}
+
+
+
+
+// //     "filter": [
+//         //         {
+//         //             // "terms": {
+//         //             //     "sourceId": [ "111090330" ]
+//         //             // }
+                    
+
+//         //         }
+//         //     ]
+//         //     // "must_not": [
+//         //     //     {
+//         //     //         "term": {
+//         //     //             "categories": ""
+//         //     //         }
+//         //     //     }
+//         //     // ]
+            
+//         // }
+
+
+
+// {
+//     "size":
+// }
+
+// {
+//   "query": {
+//     "bool": {
+//       "must": [
+//         {
+//           "nested": {
+//             "path": "categories",
+//             "query": {
+//               "bool": {
+//                 "must": [
+//                   {
+//                     "match": {
+//                       "categories.level ": 1
+//                     }
+//                   }
+//                 ]
+//               }
+//             }
+//           }
+//         }
+//       ]
+//     }
+//   }
+// }
+
+
+
+

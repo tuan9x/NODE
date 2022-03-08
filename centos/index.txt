@@ -1,0 +1,18 @@
+- env : show all env
+- echo: show text user provide
+- history: show all command use before
+- hostnamectl: show system info,.....
+
+- hostnamectl set-hostname newNameHere
+============================================================================
+nmtui => ui setup on centos
+============================================================================
+- ls *.txt // show all file with end *.txt
+- head -2 1.txt   // only show 2 line of file
+- tail -2 1.txt // only show from line 3 ==> end
+- cat -n 1.txt. // show with num of line 
+- grep "dong" 1.txt. // search key "dong" in file 
+- which node || which docker // ==> shows you the path of a command in your PATH
+- chmod 000 myfile     # revoke all permissions (---------)
+  chmod 777 myfile     # grant all permissions (rwxrwxrwx)
+  chmod 755 myfile     # reserve write access for the user,

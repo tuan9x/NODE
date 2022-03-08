@@ -1,0 +1,39 @@
+* https://sysadminxpert.com/how-to-install-postgresql-12-on-ubuntu/
+
+------------------ INSTALL ---------------------
++ sudo apt update -y
++ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
++ echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
++ sudo apt update -y
++ sudo apt -y install postgresql-12 postgresql-client-12
++ systemctl enable postgresql
+
+------------------ Config ---------------------
+* Open Port:
+ + ==> Add this line to button on file: "/etc/postgresql/12/main/pg_hba.conf"
+ 	   # Allow access from anywhaere 
+	   host all all 0.0.0.0/0 md5
+ + ==> Edit "/etc/postgresql/12/main/postgresql.conf":
+ 	listen_addresses = '0.0.0.0'
++ sudo -u postgres psql
++ ALTER USER postgres PASSWORD 'nannguyen';
+
++ CREATE USER tuan WITH REPLICATION ENCRYPTED PASSWORD 'tuantuan';
++ /etc/postgresql/12/main/pg_hba.conf
+=> Add: host    replication     tuan      45.77.173.169/24      md5
+
++ systemctl disable ufw
+
+
+------------------ SYNC ---------------------
+
+pg_basebackup -h 45.76.181.216 -D /var/lib/postgresql/12/main/ -U tuan -vP -W
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+Link change port mongodb on centos :
+ http://www.configserverfirewall.com/mongodb/change-mongodb-default-port/
+  + nano /etc/mongod.conf
+  + port: 27016
+  + sudo semanage port -a -t mongod_port_t -p tcp 27016
+  +  sudo systemctl restart mongod.service
+
+
+---------------------
+mongo --port 27016 -u "tuan" -p "123" --authenticationDatabase "kaka"
+mongo --port 27016 -u "superAdmin" -p "admin123" --authenticationDatabase "admin"
+Author : https://medium.com/mongoaudit/how-to-enable-authentication-on-mongodb-b9e8a924efac
+https://medium.com/@raj_adroit/mongodb-enable-authentication-enable-access-control-e8a75a26d332
+
+==============================================
+  + The 3 Secure for Mongodb : limit ip user , auth ,
+       https://www.psychz.net/client/question/en/how-to-secure-mongodb-on-centos-7.html
+
+
+
+=======
+security mongo on vps :
+   ===> https://medium.com/founding-ithaka/setting-up-and-connecting-to-a-remote-mongodb-database-5df754a4da89

@@ -1,0 +1,24 @@
+version: "3"
+services:
+  databasePostgresql:
+    container_name: postgres
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Tuannv
+      POSTGRES_USER: tuannv
+      POSTGRES_DB: meoo
+    ports:
+      - "2659:5432"
+    volumes:
+      - ./backup:/var/lib/postgresql/data
+    networks:
+      - dbnet
+
+networks:
+  dbnet:
+# volumes:
+#     pgdata:
+
+# =========== CLI Sync DB To Local
+# rsync -avzh root@123.232.175.81:/home/db/postgresql/backup /Users/tuan/Desktop/bgg/

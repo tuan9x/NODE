@@ -1,0 +1,12 @@
+#Tạo namespace có tên ingress-controller
+kubectl create ns ingress-controller
+
+kubectl apply -f https://haproxy-ingress.github.io/resources/haproxy-ingress.yaml
+
+
+# Gán thêm label cho các Node (ví dụ node worker2.xtl, worker1.xtl ...)
+- kubectl label node master.xtl role=ingress-controller
+
+- kubectl get all -n ingress-controller
+
+- kubectl get ingress -n ingress-controller

@@ -1,0 +1,14 @@
+
+- Install:
+  + sudo yum install postgresql-server postgresql-contrib
+  + sudo postgresql-setup initdb
+  + sudo systemctl start postgresql
+  + sudo systemctl enable postgresql
+
+  ====================================================
+  - Link : https://www.linode.com/docs/databases/postgresql/how-to-install-postgresql-relational-databases-on-centos-7/
+
+  - https://computingforgeeks.com/how-to-install-postgresql-12-on-centos-7/
+
+
+  - https://blog.bigbinary.com/2016/01/23/configure-postgresql-to-allow-remote-connection.html

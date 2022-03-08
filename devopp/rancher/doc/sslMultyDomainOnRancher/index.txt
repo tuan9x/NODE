@@ -1,0 +1,20 @@
+
+- Used 1 VPS to get SSL abc.com , api.abc.com, client.com, ...
+  => Sync ssl folder to local to backup
+
+- Add 2 file: privkey.pem + fullchain.pem to rancher cert it => Image 1_...
+- When add ingress for domain on rancher 
+  => select Certificate (on cate: SSL/ Certificate) => Image 2_....
+
+
+====================
+SpeedTest:
+  + Domain api.abc.com -> 2pod api run on node1 
+  ==> api.abc.com with ssl : Avenger 60 -> 70ms for ping api
+
+  + After , Add node2 to cluster
+  => K8s auto mapping ssl to new node (node2)
+  => Hande by 2 pod on 2 node
+  => Auto cert SSL :))
+     . If request to pod main => 60 -> 70ms 
+    . If request to pod on different node => 120ms. It good!!

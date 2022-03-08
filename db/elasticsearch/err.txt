@@ -1,0 +1,3 @@
+* ElasticsearchException[failed to bind service]; nested: AccessDeniedException[/usr/share/elasticsearch/data/nodes];
+
+==> chmod +x /path_folder_save_data_volum

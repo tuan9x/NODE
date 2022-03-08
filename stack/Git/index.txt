@@ -1,0 +1,39 @@
+
+- Đặt tên sai branch:L
+  git branch -m < tên branch mới >
+
+* Commit chơi chơi và giờ muốn nó bay màu
+ - Cách 1: Sử dụng reset (khi chưa có ai pull về)
+   + git reset HEAD~ : Di chuyển HEAD về vị trí commit reset và vẫn giữ nguyên tất cả các thay đổi của file, nhưng loại bỏ các thay đổi khỏi stage (Đưa HEAD và index về như cũ)
+  
+   + git reset --hard HEAD~
+      . Di chuyển con trỏ HEAD về vị trí commit reset và loại bỏ tất cả sự thay đổi của file sau thời điểm commit reset
+      . Muốn quay về trước n commit, VD 5 commit thì có thể thay bằng HEAD~5.
+      . -hard có nghĩa là bỏ commit đi và bỏ cả những thay đổi chưa được commit trong working space. Khi này môi trường sẽ hoàn toàn "sạch sẽ" như thời điểm trước khi commit
+
+   + git reset --soft HEAD~
+      . Lệnh này chỉ di chuyển HEAD về vị trí commit reset. Trạng thái của stage và tất cả sự thay đổi của file sẽ được giữ nguyên
+      . --soft có nghĩa là bỏ commit đi nhưng giữ nguyên những thay đổi chưa được commit trong working space.
+      . --soft hữu dụng khi bạn muốn giữ lại những thay đổi chưa commit cho lần commit tiếp theo
+
+- Cách 2: Sử dụng revert (người khác đã pull về):
+  + git revert <commit_hash>  // commit_hash là mã commit
+
+
+* Khôi phục trạng thái trc khi merge:
+    # Đầu tiên là xem lại toàn bộ lịch sử commit
+	- git reflog
+	- git reset --hard ORIG_HEAD
+
+
+
+# Tạm thời lưu lại các phần công việc còn đang làm dở
+$ git stash -u
+# Chuyển sang một branch khác và làm việc
+$ git checkout -b other-branch
+$ git add <các file cần thiết>
+$ git commit -m "commit message"
+# Trở về branch cũ
+$ git checkout origin-branch
+# Lấy lại các nội dung công việc đang làm dở trước đó
+$ git stash pop 

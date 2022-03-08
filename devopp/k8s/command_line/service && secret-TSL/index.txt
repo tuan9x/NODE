@@ -1,0 +1,14 @@
+
+- kubectl get svc
+- kubectl get svc/myappservice -o yaml
+
+
+- kubectl get endpoints
+
+- kubectl create secret tls secret-nginx-cert --cert=certs/tls.crt  --key=certs/tls.key
+- kubectl describe secret/secret-nginx-cert
+
+=====
+* create ssl certs:
+  - openssl req -nodes -newkey rsa:2048 -keyout tls.key  -out ca.csr -subj "/CN=xuanthulab.net"
+  - openssl x509 -req -sha256 -days 365 -in ca.csr -signkey tls.key -out tls.crt

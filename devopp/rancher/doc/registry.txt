@@ -1,0 +1,11 @@
+- url: null : )) ==> use defualt of register hub_docker
+- User: acc_hub
+- Password: _rootAcc_pass
+
+======
+
+* Custom
+when create rancher  
+	setting ==> system_default_register ==> https://registry.hub.docker.com
+==> create clustere ==> option register 
+

@@ -1,0 +1,6 @@
+
+*
+ Error saving credentials: error storing credentials - err: exit status 1, out: `The user name or passphrase you entered is not correct.`
+
+ => Removing "credsStore": "osxkeychain" from ~/.docker/config.json instead.
+ => rm -rf /usr/local/bin/docker-credential-osxkeychain

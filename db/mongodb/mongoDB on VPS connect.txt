@@ -1,0 +1,46 @@
+* To connect mongoDB on VPS ==> required authenticate.
+
+- Strep 1: Enable auth :
+  + use admin
+  => 
+// Create Root Account.
+db.createUser(
+  {
+    user: "admin",
+    pwd: "123456",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+// Create account to access to your database 
+db.createUser({
+   user: "tuan", pwd: "123456",
+   roles:[{role: "read", db: "test"},
+   {role:"readWrite", db: "test"}]
+})
+  
+  + Enabling Authentication
+    => sudo nano /etc/mongod.conf
+    => security:
+         authorization: "enabled"
+    => sudo systemctl restart mongod
+    => sudo systemctl status mongod   => if "Active: active (running)" is OK !=)))
+
+- To access into your database :
+   => mongo -u tuan -p 123456 --authenticationDatabase testdatabase
+
+- Step 2 � Configuring a Public bindIP:
+  + sudo nano /etc/mongod.conf
+  + net:
+    port: 27017
+    bindIp: 127.0.0.1,IP_of_MongoHost  // Or 0.0.0.0 to access all connection.
+
+- Step 3 : Open port to access to database on VPS from other server.
+  + sudo firewall-cmd --zone=public --add-port=27017/tcp --permanent
+  + sudo firewall-cmd --reload
+
+
+
+// Link see more :
++ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04
++ https://www.linode.com/docs/databases/mongodb/install-mongodb-on-centos-7/

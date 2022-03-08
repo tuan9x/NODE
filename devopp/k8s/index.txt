@@ -1,0 +1,25 @@
+- Kubernetes: 
+  + Kubernetes Cluster : same as 1VPS = ))
+  + Kubernetes Pod: pod contain container. (các container trong pod sẽ có thể share lưu trữ và mạng cho nhau. giả sử mình chạy 1
+	project có dùng nodejs và mysql và mình dùng 2 container là nodejs và mysql thì mình để 2 thằng này trong pod thôi.)
+
+  + Kubernetes replicas (bản sao): Khi app của bạn scale lên bạn muốn run nhiều pod cùng 1 lúc replicas là tham số thể hiện số pod giống nhau bạn muốn run.
+
+
+- Vài khái niệm:
+	+ Api server: là cách duy nhất để ta giao tiếp với Cluster. Đây cũng là chỗ để start hay stop các container (pod), kiểm tra trạng thái, check log ...
+    + Kubelet: Monitor(giám sát) các container (pod) nằm trong 1 node, giao tiếp với master node.
+    + Pod: Tạm thời thì cứ coi pod tương đương với container đi.
+
+
+- In local , use Minikube to test local.
+- Kubectl: client tool để tạo request tới API của Kubernetes.
+
+
+
+
+
+
+
+
+

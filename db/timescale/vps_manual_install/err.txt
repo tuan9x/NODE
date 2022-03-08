@@ -1,0 +1,37 @@
+
+* Er: FATAL:  extension "timescaledb" must be preloaded (When after select db, then run create EXTENSION):
+  + sudo -u postgres psql
+  + \c meone
+  + SET timescaledb.allow_install_without_preload = 'on';
+  => Connect db and set "allow_install_without_preload"
+
+
+  + sudo service postgresql restart
+  + sudo service postgresql enable
+  => Reload All
+
+
+
+==============================> LOG ERR AND SUGGEST: 
+FATAL:  extension "timescaledb" must be preloaded
+HINT:  Please preload the timescaledb library via shared_preload_libraries.
+
+This can be done by editing the config file at: /etc/postgresql/12/main/postgresql.conf
+and adding 'timescaledb' to the list in the shared_preload_libraries config.
+	# Modify postgresql.conf:
+	shared_preload_libraries = 'timescaledb'
+
+Another way to do this, if not preloading other libraries, is with the command:
+	echo "shared_preload_libraries = 'timescaledb'" >> /etc/postgresql/12/main/postgresql.conf 
+
+(Will require a database restart.)
+
+If you REALLY know what you are doing and would like to load the library without preloading, you can disable this check with: 
+	SET timescaledb.allow_install_without_preload = 'on';
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+The connection to the server was lost. Attempting reset: Succeeded.
+
+
+

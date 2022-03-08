@@ -1,0 +1,14 @@
+
+- Allow nginx access any port (CLI run on centos 8)
+  ==> sudo setsebool -P httpd_can_network_connect 1
+
+ (If not use nginx, example use Nodejs app port 3000 
+     ==> sudo firewall-cmd --zone=public --add-port=3000/tcp --permanent
+     ===> sudo firewall-cmd --reload
+     ==> ip:3000 OKe
+ )
+
+
+- Delete port:
+  lsof -i :3000
+  ==> kill 28967 41613

@@ -1,0 +1,2 @@
+- url grpc: proxy-otp.proxy-otp:5000
+  ==> workload_name.namespace:port

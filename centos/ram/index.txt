@@ -1,0 +1,14 @@
+- Show RAM info:
+   + free: show all count with number
+   + free -h: show all count with text
+
+- Check ram use :
+   + free : 
+   + free -h ==> recomand
+   + df -h => check space on availability of drive use 
+
+- Check CPU use
+   + use default top : check cpu use;
+   + use package "htop":
+       . sudo yum install htop (Require : "sudo yum -y install epel-release");
+       . htop

@@ -1,0 +1,8 @@
+# Centos:
+    + sudo systemctl stop firewalld
+    + sudo systemctl start firewalld
+    + sudo firewall-cmd --reload
+
+# Ubuntu:
+    + apt start ufw
+    + apt enable ufw

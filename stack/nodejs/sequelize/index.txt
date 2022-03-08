@@ -1,0 +1,6 @@
+
+* If UserModel include many SubModel: [S1, S2, S3]
+  And S1 include S1.1, S1.2
+
+  => If S1.1 or S1.2 error then query on main UserModel error (throw on S1 :((
+  => If err relation need check all sub model

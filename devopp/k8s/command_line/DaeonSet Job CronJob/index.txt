@@ -1,0 +1,26 @@
+
+* DaeonSet: đảm bảo mỗi node chỉ chạy 1 bản copy của pod
+  - kubectl get ds -o wide
+  - kubectl describe ds/dsapp
+  - kubectl delete ds/dsapp
+
+  // Important: Mặc định NODE master của kubernetes không cho triển khai chạy các POD trên nó để an toàn, nếu muốn cho phép tạo Pod trên node Master thì xóa đi taint có tên node-role.kubernetes.io/master
+
+
+  # xóa taint trên node master.xtl cho phép tạo Pod
+	- kubectl taint node master.xtl node-role.kubernetes.io/master-
+
+  # thêm taint trên node master.xtl ngăn tạo Pod trên nó
+	- kubectl taint nodes master.xtl node-role.kubernetes.io/master=false:NoSchedule
+
+* JOB
+  - kubectl describe job/myjob  // Thông tin job có tên myjob
+
+* CronJob
+  - 
+
+
+
+
+
+

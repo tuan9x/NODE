@@ -1,0 +1,36 @@
+version: '3'
+services:
+  elasticsearch:
+    build: .
+    container_name: elasticsearch
+    image: elasticsearch:7.11.2
+    # command: /bin/sh -c "chown -R 1000:1000 /usr/share/elasticsearch/data"
+    environment:
+      - xpack.security.enabled=false
+      # - cluster.initial_master_nodes[0]=localhost
+      - cluster.name=meone-search-engine
+      - discovery.type=single-node
+      - http.cors.enabled=true
+      - http.cors.allow-credentials=true
+      # - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+      # - http.cors.allow-origin=/https?:\/\/localhost(:[0-9]+)?/
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    restart: always
+    ports:
+      - "9200:9200"
+    networks: 
+      - dbnet  
+    volumes:
+      - /root/abc:/usr/share/elasticsearch/data
+
+networks: 
+  dbnet:
+
+
+## If err Permission: ==> 
+# chmod +x $PWD
+# chmod 777 $PWD
+
+## NOTE:
+# Err: "Caused by: java.nio.file.AccessDeniedException: /usr/share/elasticsearch/data/nodes",
+# ==> chmod 777 /root/abc  (/abc: path save data) // note: 777 => permission read, write all

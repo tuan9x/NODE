@@ -1,0 +1,3 @@
+- sudo apt update -y
+
+- ufw stop ==> if use rancher with ubuntu on Vultr ==> can disable firewall (ufw)

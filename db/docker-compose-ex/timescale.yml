@@ -1,0 +1,19 @@
+version: "3"
+services:
+  databaseTimeScale:
+    container_name: timescale
+    image: timescale/timescaledb:latest-pg12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_USER: root
+      POSTGRES_DB: logtimescale
+    ports:
+      - "5555:5432"
+    volumes:
+      - ./backup:/var/lib/postgresql/data
+    networks:
+      - dbnet
+
+networks:
+  dbnet:

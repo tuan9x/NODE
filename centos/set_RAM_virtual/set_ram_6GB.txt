@@ -1,0 +1,11 @@
+- sudo swapon --show
+- sudo fallocate -l 6G /tuansau
+- sudo dd if=/dev/zero of=/tuansau bs=1024 count=6291456
+- sudo chmod 600 /tuansau
+- sudo mkswap /tuansau
+- sudo swapon /tuansau
+- sudo nano /etc/fstab
+   => add : "/tuansau swap swap defaults 0 0"
+
+- sudo swapon --show
+- sudo free -h

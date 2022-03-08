@@ -1,0 +1,22 @@
+
+** State lifecycle with useEffect:
+
+const [data, setData] = useState({})
+
+
+useEffect(async () => {
+    console.log(">>> Effect ::::::::::::")
+})
+==> Run every when state change 
+
+
+useEffect(async () => {
+    console.log(">>> Effect ::::::::::::")
+}, [])
+==> Only run 1 time when init (same componentIdmount)
+
+
+useEffect(async () => {
+    console.log(">>> Effect ::::::::::::")
+}, [ data ])
+==> Only run when init and data change 

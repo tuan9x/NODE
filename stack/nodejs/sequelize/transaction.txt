@@ -1,0 +1,54 @@
+const transaction = await sequelize.transaction();
+try {
+    const user = await UserModel.create(
+        {
+            name: "Tuandeptrai",
+            email: "tuannv",
+            password: "123456"
+        }, {
+            transaction
+        }
+    );
+
+    await transaction.commit();
+
+    return res.json({ user });
+} catch (e) {
+    await transaction.rollback();
+    return res.json({
+        err: String(e)
+    });
+}
+
+
+
+======== UPDATE
+const transaction = await sequelize.transaction();
+    try {
+        await UserModel.update(
+            { coin: Number(userInfo.coin - numYear * webInfo.maintainFee ) },
+            {
+                where: {
+                    id: userInfo.id
+                },
+                transaction
+            }
+        );
+
+        const user = await UserModel.create(
+            {
+                name: "Tuandeptrai",
+                email: "tuannv",
+                password: "123456"
+            }, {
+                transaction
+            }
+        );
+
+        await transaction.commit();
+
+        return "oke";
+    } catch (e) {
+        await transaction.rollback();
+        return { err: "Có lỗi xảy ra, vui lòng thòng thử lại" };
+    }

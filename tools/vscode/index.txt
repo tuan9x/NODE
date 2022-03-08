@@ -1,0 +1,9 @@
+
+- Err typescript not auto fix lint
+  ==> setting icon -> search "tslint" -> edit settings.json
+  ==> "tslint.autoFixOnSave": true,
+  + Use all package toghether: TSLint + TSLint(deprecated)
+
+====================
+
+-  Windown + Alt + Back. ==> Delete Forever

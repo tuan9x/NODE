@@ -1,0 +1,32 @@
+version: "3"
+services:
+  db:
+    container_name: postgres
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: demo01  
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    networks: 
+      - webnet
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'mysql'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'fpoly123'
+      MYSQL_ROOT_PASSWORD: 'fpoly123'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysqldata:/var/lib/mysql    
+
+networks: 
+  webnet:

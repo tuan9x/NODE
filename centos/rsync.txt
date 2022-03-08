@@ -1,0 +1,15 @@
+- Synxtax basic : rsync options source destination
+- Option: 
+   + v : verbose
+   + r : ==> sao chép dữ liệu theo cách đệ quy (không bảo tồn mốc thời gian và permission trong quá trình truyền dữ liệu)
+   + a : ==> chế độ lưu trữ cho phép sao chép các tệp đệ quy và giữ các liên kết, quyền sở hữu, nhóm và mốc thời gian
+   + z : gzip data
+   + h : format number
+
+- rsync -avz /Users/lapvip/Desktop/go_m root@223.148.124.123:/root/public
+  ==> Upload folder go_m to /root/public on VPS
+
+- rsync -avzh root@223.148.124.123:/root/public /Users/lapvip/Desktop/xyz
+  ==> Download folder "/root/public" to "Desktop/xyz" on local
+
+- --progress: show process

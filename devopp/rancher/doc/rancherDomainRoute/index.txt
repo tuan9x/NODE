@@ -1,0 +1,18 @@
+With Add Rule => Use as routing service
+
+/ => homePage
+/static => static Service
+/cms => cms Service
+
+
+
+* Note:
+  /static / /cms OR /static /cms / => Not important
+  => Rancher will find and check map on all, level , sort is not important
+  
+
+==========
+* Router Map Note
+  - "/" => App Home
+  - "/api" => All router prefix /api. Ex: /api , /apiss , /api/s/
+  - "/api/" => Only router map "/api/". Ex: /api , /api/user, /api/something

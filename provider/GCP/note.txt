@@ -1,0 +1,3 @@
+- if install rancher on VPS of GG Clould 
+  ==> Alow http + https on the web install of GG
+  ==> instal, oke : ))

@@ -1,0 +1,5 @@
+- kubectl get nodes: get node
+- kubectl get node -o wide  // show more info
+- kubectl  describe node/docker-desktop: get info node "docker-desktop"
+
+- kubectl get node -o wide: show with ip,...

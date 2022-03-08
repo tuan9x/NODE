@@ -1,0 +1,5 @@
+// Disable Selinux
+- sestatus : check status Selinux
+- sudo setenforce 0 :  disable Selinux,
+- sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+- reboot

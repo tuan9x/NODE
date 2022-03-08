@@ -1,0 +1,20 @@
+if err :
+  Last metadata expiration check: 0:51:08 ago on Mon 03 Feb 2020 06:09:30 AM UTC.
+	Package postgresql12-12.1-2PGDG.rhel8.x86_64 is already installed.
+	Package postgresql12-server-12.1-2PGDG.rhel8.x86_64 is already installed.
+	Dependencies resolved.
+	Nothing to do.
+	Complete!
+==>
+   + sudo dnf -y uninstall postgresql12 postgresql12-server
+   + sudo dnf -y install postgresql12 postgresql12-server
+
+
+- err : 
+   "Package pgdg-redhat-repo-42.0-6.noarch is already installed.
+	Dependencies resolved.
+	Nothing to do.
+	Complete!"
+
+=> + sudo dnf -y remove postgresql12 postgresql12-server
+   + sudo dnf -y uninstall postgresql12 postgresql12-server   

@@ -1,0 +1,17 @@
++ http {
+       upstream backend {
+           server localhost:6969;
+           server localhost:7000;
+       }
+    }
+
+  // Tiếp theo redirect url về upstream group xử lí. 
+  + server {
+      // Api Router is load-balancer to app_api
+      
+      location /api {
+          proxy_pass http://backend;
+      }
+  }  
+
+===> Load balance from item node local;  

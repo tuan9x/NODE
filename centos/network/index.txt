@@ -1,0 +1,8 @@
+- Show port app use: netstat -anp --tcp --udp | grep LISTEN
+  ==> Delete app use port: kill -9 <process ID>
+
+- ss : Show list port listen and connection active
+  + ss -t: List connection active
+  + ss | grep ESTAB | grep tcp : List connection active(with detail)
+
+  + ss -ltn: List port listen

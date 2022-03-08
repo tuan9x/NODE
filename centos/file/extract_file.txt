@@ -1,0 +1,5 @@
+tar -xvf  <.tar file> or <.tar.xz file>
+tar -xzvf <.tar.gz file>
+tar -xjvf <.tar.bz2 file>
+
+gunzip file.gz

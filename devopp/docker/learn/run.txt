@@ -1,0 +1,62 @@
+- docker pull centos
+- docker run -i -t  --name "server001" -h centos01 centos:latest
+   + -i : Container tạo ra nhận tương tác  
+   + -t : Container kết nối với terminal 
+   + --name : Đặt tên cho container
+   + -h : Đặt tên cho hostname 
+
+- docke ps : list containet
+  docker ps -a : list all container
+
+- docker start b52b74ba9bf4: Chạy container
+- docker stop b52b74ba9bf4: Dừng container
+- docker attach b52b74ba9bf4: truy cập vào container
+
+- Ctrl + P + Q : Thoát container nhưng ko tắt nó
+
+- docker rm -f b52: Xoá container đang chạy 
+- docker rmi {image_id/name}: Xóa một image
+- docker logs -f {id} :: log into terminer time_time
+
+================================================
+- docker exec {container_name/id} {lệnh thực thi}: thực hiện lệnh trong container từ ngoài host 
+
+- Build container to image
+   docker commit {container_name/id} server1_custom:version1
+
+   docker commit {container_name/id} server1_custom:version1
+
+- Lưu images thành file ngoài host:
+     + docker save --output myimage.tar 1ddbd8d00d0d
+  Phục hồi file thành images
+     + docker load -i myimage.tar
+  Đổi tên docker images khi trống 
+     + docker tag {id} { new_image_name }
+
+
+=====================
+docker tag 701414c02470 acc_hub/apii:1.1
+docker push acc_hub/apii:1.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+
+- Ubuntu 20.04.1 LTS
+
+- SELinux status: estatus
+
+- Disable SELinux:
+  + nano /etc/selinux/config
+    ==> 
+        FROM:
+		SELINUX=enforcing
+		TO:
+		SELINUX=disabled

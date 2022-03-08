@@ -1,0 +1,42 @@
+===================
+Note : Multy app on VPS :
+===> Config add location :
+
+    location / {
+       proxy_pass "http://127.0.0.1:8080";
+    }
+
+    location /test {
+       proxy_pass "http://127.0.0.1:1000";
+    }
+============================================
+
+* Load balancer :
+  - Để bắt đầu sử dụng NGINX với một nhóm các máy chủ web,
+     đầu tiên, bạn cần khai báo upstream group. Directive này được đặt trong http block.
+
+  + http {
+       upstream backend {
+           server localhost:6969;
+           server localhost:7000;
+       }
+    }
+
+  // Tiếp theo redirect url về upstream group xử lí. 
+  + server {
+        // Default home is load to app:3000 
+  		location / {
+	        proxy_pass http://localhost:3000;
+	    }
+
+	    // Api Router is load-balancer to app_api
+	    location /api {
+	        proxy_pass http://backend;
+	    }
+	}  
+
+  ==> Với router dạng "/api/...." sẽ do upstream group "backend" xử lí. 
+      ==> upstream group "backend" sẽ cân bằng tải trên 2 app "localhost:6969" và "localhost:7000";
+
+
+      

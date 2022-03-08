@@ -1,0 +1,2 @@
+
++ screenshot => option => saveto .. Choose Localtion

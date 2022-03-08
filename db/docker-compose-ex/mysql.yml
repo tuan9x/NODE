@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: '123456'
+      MYSQL_ROOT_PASSWORD: '123456'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./backup:/var/lib/mysql
+    networks: 
+      - dbnet      
+
+networks: 
+  dbnet:

@@ -1,0 +1,2 @@
+-   Beautiful code : shift + option + F
+- Show preview box on topRight screen editor: View => Show MiniMap

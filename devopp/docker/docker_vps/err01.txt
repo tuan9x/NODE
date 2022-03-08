@@ -1,0 +1,14 @@
+CentOS-8 - AppStream                                                                         4.8 kB/s | 4.3 kB     00:00    
+CentOS-8 - Base                                                                              6.6 kB/s | 3.8 kB     00:00    
+CentOS-8 - Extras                                                                            2.0 kB/s | 1.5 kB     00:00    
+Docker CE Stable - x86_64                                                                    176 kB/s |  21 kB     00:00    
+Error: 
+ Problem: package docker-ce-3:19.03.5-3.el7.x86_64 requires containerd.io >= 1.2.2-3, but none of the providers can be installed
+  - cannot install the best candidate for the job
+  - package containerd.io-1.2.10-3.2.el7.x86_64 is excluded
+  - package containerd.io-1.2.2-3.3.el7.x86_64 is excluded
+  - package containerd.io-1.2.2-3.el7.x86_64 is excluded
+  - package containerd.io-1.2.4-3.1.el7.x86_64 is excluded
+  - package containerd.io-1.2.5-3.1.el7.x86_64 is excluded
+  - package containerd.io-1.2.6-3.3.el7.x86_64 is excluded
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)

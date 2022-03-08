@@ -1,0 +1,24 @@
+Setting Oke on Ubuntu 20
+
+* https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
+
+- sudo apt install certbot python3-certbot-nginx
+- nano /etc/nginx/sites-available/default
+ => server_name example.com www.example.com;
+
+- sudo nginx -t
+- sudo systemctl reload nginx
+
+Allow firewall:
+- sudo ufw status
+- sudo ufw allow 'Nginx Full'
+- sudo ufw delete allow 'Nginx HTTP'
+- sudo ufw status => output: Status: active
+
+Install
+- sudo certbot --nginx -d abc.com -d www.abc.com (Note: before may add DNS map to this IP vps on Clouldflare)
+- sudo systemctl status certbot.timer  => Verifying Certbot Auto-Renewal
+- sudo certbot renew --dry-run
+
+
+=> Then config more Nginx for handle app me .

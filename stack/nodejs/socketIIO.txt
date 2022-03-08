@@ -1,0 +1,20 @@
++   io.sockets.emit : phat ve tat ca
++   socket.emit : Chi phat ve thang emit
++   socket.broadcast.emit : Phat ve tat ca , tru thang emit :D
+
++    io.to('some room').emit('some event');     Chat room
+
++  io.to("socket-ID").emit() : chat rieng tung nguoi
+
+
+
+Link : https://viblo.asia/p/mot-so-dieu-can-biet-khi-su-dung-socketio-Ljy5VoayKra
+
+
++ socket.adapter.rooms : show tat ca room 
+
+
+
+
+
+

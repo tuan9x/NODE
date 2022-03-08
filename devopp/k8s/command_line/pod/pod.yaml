@@ -1,0 +1,38 @@
+# apiVersion: v1
+# kind: Pod
+
+# metadata:
+#   labels:
+#     app: app_gi_gi_do
+#     name: tuantuna
+#   name: ungdungnode
+# spec:
+#   containers:
+#     - name: c1
+#       images: nginx
+#       resources:
+#         limits:
+#           memory: "200M"
+#           cpu: "200m"
+#       ports:
+#         containerPort: 8000
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: app1
+    ungdung: ungdung1
+  name: ungdungnode
+spec:
+  containers:
+  - name: c1
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "150M"
+        cpu: "100m"
+    ports:
+      - containerPort: 8085
+      

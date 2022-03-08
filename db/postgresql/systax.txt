@@ -1,0 +1,5 @@
++ \l : show all db;
++ \du : show all user;
++ \q : exit;
++ \dt : show all table
++ create database mydb;  : create database "mydb"

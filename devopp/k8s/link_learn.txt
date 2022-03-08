@@ -1,0 +1,12 @@
+
+
+- https://viblo.asia/p/tim-hieu-ve-kubernetes-Ljy5VWy9Kra
+
+- Install on ubuntu:
+  + https://viblo.asia/p/gioi-thieu-kubernetes-k8s-3Q75wGW95Wb
+
+- https://xuanthulab.net/gioi-thieu-va-cai-dat-kubernetes-cluster.html
+
+
+
+- OK : https://www.tecmint.com/install-a-kubernetes-cluster-on-centos-8/
