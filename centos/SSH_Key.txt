@@ -5,14 +5,14 @@
 
 
 
-* C1: X1, X2 Default no gen key
+* C1: VPS1, VPS2 Default no gen key
   => + authorized_keys ()
      + id_rsa: Private key 
      + id_rsa.pub: Public key
 
   - V1:  ssh-keygen -t rsa  => copy id_rsa.pub paste to "authorized_keys" on V2
     => "systemctl restart ssh" on V2
-    => V1: ssh login to V2
+    => VPS1: ssh login to VPS2
 
 * C2: X1 Default no gen key, X2 added key from Vultr:
   => X2 has default "authorized_keys" with content: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB......."
@@ -20,6 +20,7 @@
     - ssh-keygen -t rsa
     - chmod 600 ~/.ssh/id_rsa
     - copy Privated Key ("-----BEGIN OPENSSH PRIVAT....") to id_rsa
+       -> (Privated_Key Gen for X2 That Save & backup(anywhere)  Before )
     - id_rsa.pub (Maybe delete)
     - systemctl restart ssh
-    -> ssh user@.....
+    -> X1 ssh to X2
