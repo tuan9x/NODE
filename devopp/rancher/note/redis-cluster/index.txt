@@ -1,3 +1,20 @@
 * redis-cli monitor | grep -E ' "(g|s)et" '
   => Log pod monitor: log which pod redis used by pod node
   => Check pod load balance
+
+
+* Other Log RealTime *(ok)
+  - redis-cli
+  - auth 123456
+  - MONITOR
+
+
+==> Pod connect to redis instance as round robin
+  --> Code must implement 2 connect (master + slave)
+  --------------------------------------------> connect aka slave
+  var redis = new Redis({
+    port: 6379,
+    host: "redis-slave.default",
+    password: "123456",
+  });
+  --------------------------------------------

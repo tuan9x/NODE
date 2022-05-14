@@ -1,6 +1,10 @@
+/****** Note Vultr ********/
+  - Use Load balancer for handle big CCU
 
+  - Block Storage: Disk (Volumn) can mount to instance
 
-
-/**************/
-* NOTE: 
-  + Use Load balancer for handle big CCU
+  - Firewall:
+    + Add FW -> DB, System,... only allow local IP
+             -> Client App ... only allow ClouldFlare
+             -> 
+             -> 

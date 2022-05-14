@@ -7,6 +7,8 @@
   + chmod +x clean.sh 
   + ./clean.sh  (example file) 
 
+- Hostname 3 vps is unix 
+
 
 * Alway check + research logs ;));
 
