@@ -1,7 +1,7 @@
+* IMG on box
 <div class="frame">
   <img src="foo"/>
 </div>
-
 
 .frame {
     height: 160px; /* Can be anything */
@@ -20,3 +20,37 @@ img {
     right: 0;
     margin: auto;
 }
+
+
+
+
+
+// Text 
+element {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+
+* Flex Item Break Line on Small:
+.boxFlex {
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  display: flex;
+  justify-content: center;
+}
+.itemFLex {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-items: center;
+  width: 150px;
+  height: 100px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+
+
