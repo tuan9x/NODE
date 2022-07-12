@@ -22,6 +22,7 @@ console.log({ xxx }) // { '1': 7 }
 const xxx = _.chain(rowss).keyBy("key").value();
 console.log({ xxx }) // { '1': { 'key': 1, 'doc_count': 7 } }
 
+
 * Map array_object to array item 
 const data = [{"productId":111090330,"shopId":1}];
 const shopIds = _.uniqBy( offshopProductList.rows , 'shopId').map((item: any, _) => {
